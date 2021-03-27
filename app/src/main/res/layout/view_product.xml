@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_height="match_parent"
     android:background="?attr/selectableItemBackground"
     android:foreground="?attr/selectableItemBackground"
-    app:cardBackgroundColor="@android:color/white"
-    app:cardCornerRadius="4dp"
-    app:cardElevation="3dp"
-    app:cardUseCompatPadding="true"
-    card_view:cardElevation="4dp">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:weightSum="8">
         <ImageView
             android:id="@+id/product_image"
             android:layout_width="match_parent"
-            android:layout_height="140dp" />
+            android:layout_height="0dp"
+            android:layout_weight="5"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -34,6 +24,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="1dp"
+                android:layout_weight="1"
                 android:weightSum="3">
 
                 <TextView
@@ -60,9 +51,11 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="1dp"
+                android:layout_weight="1"
                 android:weightSum="3">
 
-                <TextView
+
+            <TextView
                     android:id="@+id/product_price_Label"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -81,21 +74,36 @@
                     android:textColor="@android:color/black"
                     android:textSize="22sp" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:weightSum="3">
+
+
+            <TextView
+                    android:id="@+id/product_created_Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_weight="1"
+                    android:text="Created at:"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/product_created"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_weight="2"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp" />
+            </LinearLayout>
 
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/addToCart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:background="@color/purple_500"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="4dp"
-            android:src="@drawable/ic_add_shopping"
-            android:tint="@android:color/white"
-            card_view:targetApi="o" />
 
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</LinearLayout>
